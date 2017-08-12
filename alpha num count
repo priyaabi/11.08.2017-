@@ -1,0 +1,24 @@
+
+#include <iostream>
+#include <fstream>
+#include <cctype>
+using namespace std;
+
+int main() 
+{
+    char line[50];
+    int charcount = 0;
+    ifstream file("pg1661sample.txt");
+    while (!file.eof()) {
+        file.getline(line, 49);
+        for (int i = 0; i < 50; i++) {
+            if (isalnum(line[i])) {
+                charcount++;
+            }
+        }
+    }
+
+    cout << endl << "Alphanumeric character count: " << charcount;
+    cin.get();
+    return 0;
+}
